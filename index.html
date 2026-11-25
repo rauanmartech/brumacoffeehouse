@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#F8F4ED" />
+    <meta
+      name="description"
+      content="Explore cafés especiais, confeitaria e bebidas da Bruma Coffee House e monte seu pedido."
+    />
+    <link rel="icon" href="./mark.svg" type="image/svg+xml" />
+    <title>Bruma Coffee House · Cardápio</title>
+    <script type="module" src="./src/main.js"></script>
+  </head>
+  <body>
+    <div id="catalog-page">
+      <a class="skip" href="#catalogo">Ir para o cardápio</a>
+      <header class="mast">
+        <div class="wrap mast-inner">
+          <div class="header-navigation">
+            <button
+              class="head-action"
+              id="open-menu"
+              aria-haspopup="dialog"
+              aria-label="Abrir navegação"
+            >
+              <i data-icon="menu"></i>
+            </button>
+            <button class="head-action header-menu" data-nav="menu">Menu</button>
+          </div>
+          <a class="brand" href="#inicio" aria-label="Bruma Coffee House, início"
+            ><img src="./mark.svg" width="36" height="40" alt="" /><span
+              ><b>Bruma</b><small>Coffee House</small></span
+            ></a
+          >
+          <button
+            class="head-action head-cart"
+            id="open-cart"
+            aria-haspopup="dialog"
+            aria-label="Abrir carrinho"
+          >
+            <i data-icon="bag"></i><span>Meu pedido</span><b class="badge" data-count>0</b>
+          </button>
+        </div>
+      </header>
+      <main id="inicio" class="wrap">
+        <form class="search" role="search" id="search-form">
+          <i data-icon="search"></i>
+          <input
+            type="search"
+            id="search"
+            aria-label="Pesquisar no cardápio"
+            placeholder="Buscar no cardápio…"
+            autocomplete="off"
+          />
+          <button type="button" id="clear" aria-label="Limpar pesquisa" hidden>
+            <i data-icon="x"></i>
+          </button>
+        </form>
+        <section
+          id="hero"
+          aria-roledescription="carrossel"
+          aria-label="Destaques da casa"
+        ></section>
+        <nav class="categories" id="categories" aria-label="Categorias do cardápio"></nav>
+        <section id="catalogo" tabindex="-1" aria-labelledby="category-title">
+          <div class="section-head">
+            <h2 id="category-title">Cafés</h2>
+            <span aria-live="polite" id="result-count"></span>
+          </div>
+          <div class="grid" id="products"></div>
+        </section>
+        <aside id="promotion" aria-label="Especial da casa"></aside>
+      </main>
+      <footer class="wrap site-footer">
+        <span>Bruma Coffee House</span><button data-nav="about">Sobre a casa</button>
+      </footer>
+      <nav class="bottom" aria-label="Navegação principal">
+        <button data-nav="home"><i data-icon="home"></i>Início</button>
+        <button class="bottom-cart" data-nav="cart">
+          <span><i data-icon="bag"></i><b class="badge" data-count>0</b></span
+          >Carrinho
+        </button>
+        <button data-nav="menu"><i data-icon="book"></i>Menu</button>
+      </nav>
+    </div>
+    <div id="product-layer" hidden>
+      <section id="product-page" aria-labelledby="product-title">
+        <header class="product-bar">
+          <button type="button" id="product-back">
+            <i data-icon="left"></i>Voltar ao cardápio
+          </button>
+        </header>
+        <div class="product-scroll"><div id="product-content"></div></div>
+      </section>
+    </div>
+    <dialog id="panel" aria-labelledby="panel-title"><div id="panel-body"></div></dialog>
+    <div id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
